@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Javascript Function with Parameters</title>
+</head>
+<body>
+<script>
+
+//Calculate Tip Program/Added Function to Calculate Average Tip
+
+var sum = 0;
+var billAmount;
+var tip;
+var total;
+var outputTotal = [];
+var outputTip = [];
+var inputArray = [124, 48, 268, 180, 42];
+for (i = 0; i < inputArray.length; i++) {
+
+
+    billAmount = inputArray[i];
+
+    if (billAmount < 50) {
+        tip = .20 * billAmount;
+        sum = sum + tip;
+    } else if (billAmount >= 50 && billAmount <= 200) {
+        tip = billAmount * .15;
+        sum = sum + tip;
+    } else if (billAmount > 200) {
+        tip = billAmount * .10;
+        sum = sum + tip;
+    }
+
+
+    total = billAmount + tip;
+    outputTotal.push(total);
+    outputTip.push(tip);
+}
+
+var average = myFunction(sum, inputArray.length);
+
+
+function myFunction(a, b) {
+    return a / b;
+}
+console.log(outputTotal, outputTip, inputArray.length, sum, average);
+
+
+</script>
+</body>
+</html>
